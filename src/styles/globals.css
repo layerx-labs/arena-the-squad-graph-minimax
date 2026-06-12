@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a1a;
+  --foreground: #e2e8f0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+::-webkit-scrollbar-thumb {
+  background: #4a4a6a;
+  border-radius: 3px;
+}
+
+/* Graph canvas */
+.graph-container canvas {
+  cursor: grab;
+}
+.graph-container canvas:active {
+  cursor: grabbing;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  background: rgba(10, 10, 26, 0.95);
+  border: 1px solid #4a4a6a;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  pointer-events: none;
+  z-index: 1000;
+  max-width: 240px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* Club badge */
+.club-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+  margin: 2px;
+}
+
+/* Player card */
+.player-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 16px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.player-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* Nav tabs */
+.nav-tab {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.nav-tab.active {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+.nav-tab:not(.active) {
+  color: #94a3b8;
+}
+.nav-tab:not(.active):hover {
+  color: #e2e8f0;
+  background: rgba(255,255,255,0.06);
+}
+
+/* Season slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #4a4a6a;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6366f1;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+/* Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.data-table th {
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.data-table td {
+  padding: 10px 12px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.data-table tr:hover td {
+  background: rgba(255,255,255,0.04);
+}
+
+/* Flag emoji helper */
+.flag {
+  font-size: 1.2em;
+  margin-right: 6px;
+}
